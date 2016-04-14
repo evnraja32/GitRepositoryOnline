@@ -1,4 +1,4 @@
-package gitFolder.library.forloop;
+package gitFolder.library.controlstatements.loops.forloop;
 
 public class ForLoopDemo {
 

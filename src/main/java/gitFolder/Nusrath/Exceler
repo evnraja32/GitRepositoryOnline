@@ -43,12 +43,7 @@ public void readrow(String sheetnm, int rowIndex)
 //-------------After adding return type as void for getting row, this id not fetching input from excel----------		
 	
 			public XSSFCell getCellAt(int rowIndex,int cellnum){
-				XSSFSheet Sheetname = null;
-				XSSFWorkbook wbook = null;
-				XSSFRow rownumber = null;
-				XSSFCell ccell = null;
-				Sheetname = wbook.getSheetAt(0);
-	            rownumber = Sheetname.getRow(rowIndex);
+
 			     return ccell = rownumber.getCell(cellnum);
 				
 			}

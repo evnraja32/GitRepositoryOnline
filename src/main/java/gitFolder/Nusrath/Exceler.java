@@ -16,8 +16,10 @@ public class Exceler {
 		
 		Exceler obj = new Exceler();
 		
-		obj.getCellAt(obj.getRowAt(obj.prepareExcelSheet(fileName, sheetName), rowIndex), cellnum);
+		int rowIndex = 0;
+		int cellnum = 0;
 		
+		obj.getCellAt(obj.getRowAt(obj.prepareExcelSheet("fileName", "sheetName"), rowIndex), cellnum);
 
 	}
 
@@ -31,7 +33,6 @@ public class Exceler {
 		try{
 			FileInputStream fis = new FileInputStream(new File("./data/"+fileName+".xlsx"));
 			workbook = new XSSFWorkbook(fis);
-
 			sheet = workbook.getSheet(sheetName);
 
 		}catch(IOException e){

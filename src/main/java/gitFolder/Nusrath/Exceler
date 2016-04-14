@@ -1,0 +1,81 @@
+//----------------Working Fine--------------------
+public XSSFSheet prepareExcelSheet(String fileName,String sheetName){
+				XSSFWorkbook workbook = null;
+				XSSFSheet sheet = null;
+
+				try{
+					FileInputStream fis = new FileInputStream(new File("./data/"+fileName+".xlsx"));
+					workbook = new XSSFWorkbook(fis);
+
+					sheet = workbook.getSheet(sheetName);
+
+				}catch(IOException e){
+					printException(e, "Error in excel book");
+				}
+				return sheet;
+			}
+
+//------------------Your Code----------------------When tried to fetch data, I gave string input for excel sheet, 
+//it throws an error, the method in wrapper class is not applicable for arguments string,int
+			public XSSFRow getRowAt(XSSFSheet excelSheet,int rowIndex){
+				return excelSheet.getRow(rowIndex);
+			}
+			
+//------------Initially I gave return type as XSSFRow and same error as above, when used in the code-------
+
+public void readrow(String sheetnm, int rowIndex)
+			{
+				XSSFWorkbook wb = null;
+				XSSFRow currentRow = null;
+				XSSFSheet sheet = null;
+				try {
+				sheet = wb.getSheet(sheetnm);	
+				currentRow = sheet.getRow(rowIndex);
+				
+				}
+				catch (Exception e) {
+				
+					e.printStackTrace();
+			} 
+			}
+			
+
+//-------------After adding return type as void for getting row, this id not fetching input from excel----------		
+	
+			public XSSFCell getCellAt(int rowIndex,int cellnum){
+				XSSFSheet Sheetname = null;
+				XSSFWorkbook wbook = null;
+				XSSFRow rownumber = null;
+				XSSFCell ccell = null;
+				Sheetname = wbook.getSheetAt(0);
+	            rownumber = Sheetname.getRow(rowIndex);
+			     return ccell = rownumber.getCell(cellnum);
+				
+			}
+/*--Note - This is how I tried implementing in real code-----
+prepareExcelSheet("OpenTaps", "DataInput");
+			//getRowAt("DataInput", 1);
+			readrow("DataInput", 1);
+			
+			sendKeysToWebElement(getCellAt(1, 0).getStringCellValue());---*/
+			
+			
+//------------------Working perfectly----------------------			
+			public XSSFCell readExcel(String filename, String sheetnm, int rowIndex, int colnum)
+			{
+				XSSFRow currentRow = null;
+				FileInputStream data;
+				try {
+					data = new FileInputStream(new File("./data/"+filename+".xlsx"));
+					XSSFWorkbook workbook = new XSSFWorkbook(data);
+				XSSFSheet sheet = workbook.getSheet(sheetnm);
+				currentRow = sheet.getRow(rowIndex);
+				
+				}
+				catch (IOException e) {
+				
+					e.printStackTrace();
+			}return currentRow.getCell(colnum);
+			}
+
+			

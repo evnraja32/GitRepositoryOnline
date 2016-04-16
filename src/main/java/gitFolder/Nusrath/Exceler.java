@@ -17,7 +17,7 @@ public class Exceler {
 		Exceler obj = new Exceler();
 		
 		int rowIndex = 0;
-		int cellnum = 0;
+		int cellnum = 1;
 		
 		obj.getCellAt(obj.getRowAt(obj.prepareExcelSheet("fileName", "sheetName"), rowIndex), cellnum);
 

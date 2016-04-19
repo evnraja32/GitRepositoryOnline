@@ -49,7 +49,11 @@ public class CreateLead extends WrapperRealCode{
 	
 	 @DataProvider(name = "CreateLeadData")
 	  public Object[][] createLeadData(){
+//<<<<<<< HEAD
 		  Object data[][] = new Object[2][7];
+//=======
+//		  Object data[][] = new Object[2][5];
+//>>>>>>> 04e449e003deccc8ea7ac45c6acc74797c76a5d5
 	/*	  
 		  //row1
 		  data[0][0] = "DemoSalesManager"; data[0][1] = "crmsfa"; data[0][2] = "cmp1"; data[0][3] = "fname1"; data[0][4]="lname1"; 

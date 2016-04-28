@@ -29,8 +29,9 @@ public class CreateLeadPage extends OpentapsWrappers{
 		return this;
 	}
 	
-	public VeiwLeadPage clickCreateLead(){
+	public VeiwLeadPage clickCreateLead() throws InterruptedException{
 		clickByClassName(prop.getProperty("CreateLeadPage.clickButton.classname"));
+		Thread.sleep(5000);
 		return new VeiwLeadPage();
 	}
 }
